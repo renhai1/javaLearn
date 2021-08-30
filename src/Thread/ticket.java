@@ -20,7 +20,7 @@ public class ticket {
 class ticketSystem extends Thread {
     private static int num = 50;
 //    private static Object object = new Object();
-
+//利用同步方法来进行同步实现是把要同步的代码抽象成一个方法，该方法加关键字synchronized,继承加上static synchronized
     @Override
     public void run() {
         while (true) {
