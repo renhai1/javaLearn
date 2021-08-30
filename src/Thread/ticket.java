@@ -19,16 +19,22 @@ public class ticket {
 
 class ticketSystem extends Thread {
     private static int num = 50;
+//    private static Object object = new Object();
 
     @Override
     public void run() {
         while (true) {
-            if (num > 0) {
-                System.out.println(Thread.currentThread().getName() + "卖票票号为:" + num);
-                num--;
-            } else {
-                break;
+//            synchronized (object)
+            //讲类加载进内存，成为唯一对象
+            synchronized (ticketSystem.class) {
+                if (num > 0) {
+                    System.out.println(Thread.currentThread().getName() + "卖票票号为:" + num);
+                    num--;
+                } else {
+                    break;
+                }
             }
+
         }
     }
 }

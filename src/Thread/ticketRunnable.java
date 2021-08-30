@@ -22,13 +22,15 @@ public class ticketRunnable {
 class ticket1 implements Runnable {
     private int num = 50;
     //Object 为监听器，需要所有线程共用同一个锁
-    Object object = new Object();
+//    Object object = new Object();
 
     @Override
     public void run() {
         while (true) {
             //线程同步处理
-            synchronized (object) {
+//            synchronized (object)
+            //可以用当前对象充当，无需新建对象
+            synchronized (this) {
                 if (num > 0) {
                     //多线程的安全问题
 //                try {
