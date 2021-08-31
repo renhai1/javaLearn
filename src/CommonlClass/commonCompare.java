@@ -28,7 +28,7 @@ public class commonCompare {
 
     @Test
     public void test2() {
-        String []strs=new String[]{"BB","AA","cc","XX","SS"};
+        String[] strs = new String[]{"BB", "AA", "cc", "XX", "SS"};
         Arrays.sort(strs, new Comparator<String>() {
             @Override
             public int compare(String o1, String o2) {
@@ -45,11 +45,9 @@ public class commonCompare {
         Arrays.sort(goods, new Comparator<Goods>() {
             @Override
             public int compare(Goods o1, Goods o2) {
-                if (o1.getName().equals(o2.getName()))
-                {
-                    return -Double.compare(o1.getPrices(),o2.getPrices());
-                }else
-                {
+                if (o1.getName().equals(o2.getName())) {
+                    return -Double.compare(o1.getPrices(), o2.getPrices());
+                } else {
                     return o1.getName().compareTo(o2.getName());
                 }
             }

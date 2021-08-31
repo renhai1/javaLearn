@@ -13,7 +13,7 @@ import java.util.Calendar;
 public class commonCalendar {
     @Test
     public void test1() {
-        Calendar calendar=Calendar.getInstance();
+        Calendar calendar = Calendar.getInstance();
         System.out.println(calendar.get(Calendar.DAY_OF_WEEK_IN_MONTH));
     }
 }
