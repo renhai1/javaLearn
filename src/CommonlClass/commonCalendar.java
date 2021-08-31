@@ -2,6 +2,8 @@ package CommonlClass;
 
 import org.junit.Test;
 
+import java.util.Calendar;
+
 /**
  * @className:commonCalendar
  * @description:
@@ -11,6 +13,7 @@ import org.junit.Test;
 public class commonCalendar {
     @Test
     public void test1() {
-
+        Calendar calendar=Calendar.getInstance();
+        System.out.println(calendar.get(Calendar.DAY_OF_WEEK_IN_MONTH));
     }
 }
