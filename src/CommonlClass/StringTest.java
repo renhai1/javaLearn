@@ -2,6 +2,8 @@ package CommonlClass;
 
 import org.junit.Test;
 
+import java.nio.charset.StandardCharsets;
+
 /**
  * @className:StringTest
  * @description:
@@ -27,13 +29,55 @@ public class StringTest {
     @Test
     public void test2() {
         //s1和s2是在方法区开辟空间
-        String s1="javaEE";
-        String s2="javaEE";
+        String s1 = "javaEE";
+        String s2 = "javaEE";
         //s3和s4 是在堆空间开辟空间 new 关键字开辟新空间（堆）
-        String s3=new String("javaEE");
-        String s4=new String("javaEE");
-        System.out.println(s1==s2);
-        System.out.println(s3==s4);
-        System.out.println(s1==s3);
+        String s3 = new String("javaEE");
+        String s4 = new String("javaEE");
+        System.out.println(s1 == s2);
+        System.out.println(s3 == s4);
+        System.out.println(s1 == s3);
+    }
+
+    @Test
+    public void test3() {
+        //String 与char的转换
+        String s1 = "renhai";
+        char[] arr = s1.toCharArray();
+        for (char char1 : arr) {
+            System.out.println(char1);
+
+        }
+
+    }
+
+    @Test
+    public void test4() {
+        String s1 = "renhai中国";
+        byte[] bytes = s1.getBytes();
+        for (byte b1 : bytes) {
+            System.out.println(b1);
+
+        }
+        String s2 = new String(bytes);
+        System.out.println(s2);
+
+    }
+
+    @Test
+    public void test5() {
+        //效率 StringBuilder不安全>stringBuffer>String
+        //stringBuffer线程安全(慢)，StringBuilder不安全（快速）
+        StringBuffer stringBuffer = new StringBuffer(30);//capacity为最小的容量大小，尽量不要扩容
+        stringBuffer.append("aaaaa");
+        stringBuffer.append("aaaaa");
+        stringBuffer.append("aaaaa");
+        stringBuffer.append(111);
+        stringBuffer.append(500);
+        System.out.println(stringBuffer);
+        //这些方法都是左边右开
+        stringBuffer.replace(0, 3, "hello");
+        stringBuffer.reverse();
+        System.out.println(stringBuffer);
     }
 }
