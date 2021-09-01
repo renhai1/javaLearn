@@ -9,10 +9,16 @@ package enumeration;
 public class enumeration {
 
     public static void main(String[] args) {
-        enumeration3 enumeration=enumeration3.season1;
+        enumeration3 enumeration = enumeration3.season1;
         System.out.println(enumeration);
-        enumeration1 season2=enumeration1.season2;
+        enumeration1 season2 = enumeration1.season2;
         System.out.println(season2);
+        enumeration1[] enumeration4 = enumeration1.values();
+        for (enumeration1 enum1 : enumeration4
+        ) {
+            System.out.println(enum1.toString());
+
+        }
     }
 
 }
