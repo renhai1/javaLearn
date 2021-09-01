@@ -13,9 +13,25 @@ import java.util.List;
 public class Collection1 {
     public static void main(String[] args) {
         //Collection接口：单列集合，用来存储一个一个的对象
-        //List接口：存储有序的，可重复的数据 （动态数组）ArrayList、LinkedList、Vector
-        //Set接口：存储无序的、不可重复的数据  （高中集合）  HashSet、LinkedHashSe、TreeSet
-        //Map接口：双列集合，用来存储一对（key-value）一对的数据 （函数）HashMap、LinkedHashMap、TreeMap、Hashtable、Properties
+        /**
+         * List接口：存储有序的，可重复的数据 （动态数组）
+         *       ArrayList(主要实现类 线程不安全，速度快，底层存储Object[] 扩容1.5倍) 建议使用带参的构造器，避免扩容
+         *       ArrayList jdk1.7和jdk1.8 底层代码略有不同（开始时不一样） 1.8的比1.7的更节省内存
+         *       LinkedList(对于频繁的插入、删除操作，使用此类效率比ArrayList高；底层使用双向链表存储 扩容1.5倍)、
+         *       Vector(线程安全，速度慢，底层存储Object[] 扩容2倍)
+         */
+
+        /**
+         * Set接口：存储无序的、不可重复的数据（本质equals判断）  （高中集合）
+         *  HashSet 线程不安全 可以存储null值
+         *  LinkedHashSe 作为hashset的子类  使得遍历内部数据时，按照添加的顺序遍历
+         *  TreeSet 二叉树存储 放入的数据需要是同一个类new的
+         */
+
+        /**
+         * Map接口：双列集合，用来存储一对（key-value）一对的数据 （函数）
+         * HashMap、LinkedHashMap、TreeMap、Hashtable、Properties
+         */
 
         /** Collection方法
          * boolean add(E e)
@@ -82,7 +98,11 @@ public class Collection1 {
         collection1.add("kenan");
         collection1.add("sherry");
         collection1.add(123);
-        System.out.println(collection1.size());
-        System.out.println(collection1.isEmpty());
+//        System.out.println(collection1.size());
+//        System.out.println(collection1.isEmpty());
+        for (Object oj : collection1) {
+            System.out.println(oj);
+
+        }
     }
 }
