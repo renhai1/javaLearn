@@ -7,6 +7,8 @@ package Map;
  * @create: 2021-09-04 10:21
  */
 
+import java.util.*;
+
 /**
  * key：不可重复 无序（set） key所在的类要重写equals 和hashCode （以hashMap为例）
  * value：可重复 无需序
@@ -20,9 +22,8 @@ package Map;
  */
 
 
-public class HashMap {
+public class hashMap {
     public static void main(String[] args) {
-
 
         /**
          * void clear()
@@ -101,5 +102,37 @@ public class HashMap {
          * 返回此地图中包含的值的Collection视图。
          *
          */
+        Map map = new HashMap();
+        System.out.println(map.isEmpty());
+        map.put("renhai", "love");
+        map.put(123, "数字");
+        map.put("汉字", "人海");
+        System.out.println(map);
+        map.put("renhai", "sherry");
+        System.out.println(map);
+        //map.clear();
+        System.out.println(map.size());
+        //map.remove("renhai");
+        System.out.println(map);
+        System.out.println(map.get("renhai"));
+        System.out.println(map.containsValue("sherry"));
+        System.out.println(map.containsKey("renhai"));
+        System.out.println(map.isEmpty());
+        map.replace("renhai","xiaolan");
+        System.out.println(map);
+        Set set1=new HashSet();
+        set1=map.keySet();
+        System.out.println(set1);
+        Collection list1=new ArrayList();
+        list1=map.values();
+        System.out.println(list1);
+        Set set2=new HashSet();
+        set2=map.entrySet();
+        Iterator iterator1=set2.iterator();
+        while (iterator1.hasNext())
+        {
+            System.out.println(iterator1.next());
+        }
+        System.out.println(set2);
     }
 }
