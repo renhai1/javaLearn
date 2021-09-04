@@ -28,7 +28,8 @@ public class Collection1 {
          *  然后得到在底层数组存放位置，若此位置没元素，添加，有元素比较两个hash值是否相等，不相等以链表的形式添加，
          * 相等调用equals方法，true不添加，false添加）
          *  LinkedHashSe 作为hashset的子类  使得遍历内部数据时，按照添加的顺序遍历，遍历速率快 添加数据的同时，添加了双向链表，记录添加顺序
-         *  TreeSet 二叉树存储 放入的数据需要是同一个类new的
+         *  TreeSet 二叉树存储 放入的数据需要是同一个类new的 （自然排序）比较的方法是compareTo函数 实现compareTo接口
+         *  定制排序是comparator重写函数
          */
 
         /**
