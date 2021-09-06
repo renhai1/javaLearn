@@ -84,6 +84,9 @@ public class reflect1 {
 
     @Test
     public void test4() throws Exception {
+        /**
+         * 要是想实例化对象必需需要空参构造器 否则编译不通过
+         */
         Class<Person> personClass = Person.class;
         System.out.println(personClass.getDeclaredConstructor().newInstance());
 
