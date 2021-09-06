@@ -3,8 +3,12 @@ package reflect;
 import functions.Person;
 import org.junit.Test;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
+import java.util.Properties;
 
 /**
  * @className:reflect1
@@ -63,4 +67,26 @@ public class reflect1 {
             e.printStackTrace();
         }
     }
+
+    @Test
+    public void test3() throws Exception {
+        Properties properties1 = new Properties();
+//        FileInputStream fileInputStream1=new FileInputStream("src/jdbc.properties");
+//        properties1.load(fileInputStream1);
+        ClassLoader classLoader1 = reflect1.class.getClassLoader();
+        InputStream inputStream1 = classLoader1.getResourceAsStream("jdbc.properties");
+        properties1.load(inputStream1);
+        String userName = properties1.getProperty("userName");
+        String password = properties1.getProperty("password");
+        System.out.println("userName :" + userName);
+        System.out.println("password :" + password);
+    }
+
+    @Test
+    public void test4() throws Exception {
+        Class<Person> personClass = Person.class;
+        System.out.println(personClass.getDeclaredConstructor().newInstance());
+
+    }
+
 }
