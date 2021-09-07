@@ -11,6 +11,11 @@ import java.util.Comparator;
  * @create: 2021-09-06 22:36
  */
 public class lambdaTest1 {
+    /**
+     *  接口必需是函数式接口
+     * -> lambda 形参列表的参数类型可以省略（类型推断） ；如果lambda形参列表只有一个参数小括号（）也可以省略
+     * -> lambda体应该使用一对{ }包裹；如果lambda体只有一条执行语句（可能是return语句），可以省略大括号和return关键字
+     */
     @Test
     public void test1() {
         Runnable r1 = () -> System.out.println("Sherry");
