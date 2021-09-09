@@ -10,8 +10,7 @@ import org.junit.Test;
  */
 public class StreamAPI {
     @Test
-    public void test1()
-    {
+    public void test1() {
         /**
          * 1 Stream 关注的是对数据的运算，与CPU打交道
          *      集合关注的是数据的存储，与内存打交道
