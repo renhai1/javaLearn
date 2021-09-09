@@ -9,19 +9,20 @@ package works;
 public interface quadrangle {
 
     /**
-     * @Author renhai
-     * @Description  计算四边形的周长
-     * @Date 16:47 2021/9/9
-     * @Param [border1, border2]
      * @return void
+     * @Author renhai
+     * @Description 计算四边形的周长
+     * @Date 16:47 2021/9/9
+     * @Param []
      **/
     public double perimeter();
+
     /**
+     * @return void
      * @Author renhai
-     * @Description  计算四边形的面积
+     * @Description 计算四边形的面积
      * @Date 16:49 2021/9/9
      * @Param []
-     * @return void
      **/
     public double area();
 

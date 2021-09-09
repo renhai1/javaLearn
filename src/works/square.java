@@ -6,15 +6,15 @@ package works;
  * @author: renhai
  * @create: 2021-09-09 16:49
  */
-public class square implements quadrangle{
+public class square implements quadrangle {
     //正方形边长
     private int sideLength;
     //正方形的边长数
-    final int sideNumber=4;
+    private final int sideNumber = 4;
 
     public square() {
-        System.out.println("这里是无参构造器");
     }
+
     public square(int sideLength) {
         this.sideLength = sideLength;
     }
@@ -29,15 +29,12 @@ public class square implements quadrangle{
 
     @Override
     public double perimeter() {
-        return sideNumber*sideLength;
-
-
+        return sideNumber * sideLength;
     }
 
     @Override
     public double area() {
 
-        return sideLength*sideLength;
-
+        return sideLength * sideLength;
     }
 }

@@ -11,9 +11,9 @@ import java.util.Scanner;
 public class systemIn {
     public static void main(String[] args) {
         //调用System.in静态方法 实例化Scanner对象
-        Scanner in=new Scanner(System.in);
+        Scanner in = new Scanner(System.in);
         //读取整型的数值
-        int num=in.nextInt();
+        int num = in.nextInt();
         //输出数值（其他类型的同理）
         System.out.println(num);
     }
