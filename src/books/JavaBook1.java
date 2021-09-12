@@ -40,6 +40,6 @@ public class JavaBook1 {
         String str2=new String("renhai");
         String str3="renhai";
         System.out.println(str1.equals(str2));
-
+        System.out.println(System.out);
     }
 }
