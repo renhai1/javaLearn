@@ -2,6 +2,7 @@ package books;
 
 import org.junit.Test;
 
+import java.lang.reflect.InvocationTargetException;
 import java.time.LocalDate;
 
 import static java.lang.Math.*;
@@ -17,29 +18,43 @@ public class JavaBook1 {
     public void test1() {
         double num1 = 2.0 - 1.1;
         System.out.println(2.0 - 1.1);
-        System.out.printf("%.3f",num1);
+        System.out.printf("%.3f", num1);
 
 //        System.out.println(PI);
 //        System.out.println(E);
 //        System.out.println(4 <= 5);
     }
+
     @Test
-    public void test2()
-    {
-        String str1="renhai";
-        String str2=new String("renhai");
-        boolean flag=(str1==str2);
-        boolean flag1=(str1.equals(str2));
+    public void test2() {
+        String str1 = "renhai";
+        String str2 = new String("renhai");
+        boolean flag = (str1 == str2);
+        boolean flag1 = (str1.equals(str2));
         System.out.println(flag);//false
         System.out.println(flag1);//true
     }
+
     @Test
-    public void test3()
-    {
-        String str1=new String("renhai");
-        String str2=new String("renhai");
-        String str3="renhai";
+    public void test3() {
+        String str1 = new String("renhai");
+        String str2 = new String("renhai");
+        String str3 = "renhai";
         System.out.println(str1.equals(str2));
         System.out.println(System.out);
+        System.out.println(int.class);
+        System.out.println(String.class);
+        try {
+            //newInstance()过期了，利用 class.getDeclaredConstructor().newInstance();代替
+            System.out.println(String.class.getDeclaredConstructor().newInstance());
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (InvocationTargetException e) {
+            e.printStackTrace();
+        } catch (NoSuchMethodException e) {
+            e.printStackTrace();
+        }
     }
 }
