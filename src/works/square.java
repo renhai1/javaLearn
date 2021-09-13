@@ -10,7 +10,7 @@ public class square implements quadrangle {
     //正方形边长
     private int sideLength;
     //正方形的边长数
-    private final int sideNumber = 4;
+    private static final int sideNumber = 4;
 
     public square() {
     }
