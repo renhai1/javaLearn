@@ -6,8 +6,11 @@ package dataStructure;
  * @author: renhai
  * @create: 2021-09-16 18:07
  */
+
+
 public class ArrayQueue {
     public static void main(String[] args) {
+        //队列先入先出 后入后出
 
     }
 }
