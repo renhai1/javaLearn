@@ -2,7 +2,7 @@ package dataStructure;
 
 /**
  * @className:SparseArray
- * @description: 稀碎数组
+ * @description: 稀疏数组
  * @author: renhai
  * @create: 2021-09-16 17:39
  */
