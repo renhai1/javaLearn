@@ -29,11 +29,9 @@ public class employee {
     public void setSex(char sex) {
         this.sex = sex;
     }
-
     public Date getDate() {
         return date;
     }
-
     public void setDate(Date date) {
         this.date = date;
     }
