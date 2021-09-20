@@ -11,7 +11,10 @@ import org.junit.Test;
 public class test1 {
     @Test
     public  void test1()
-    {        //包的讲解
+    {
+        round round1 = new round(1);
+        System.out.println(round1.getLength());
+        System.out.println(round1.getSquare());
 
     }
 }
