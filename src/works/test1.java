@@ -34,24 +34,25 @@ public class test1 {
         System.out.println(employee1);
 
 
-
-
     }
+
     @Test
-    public void test2()
-    {
-        String number="123";
-        int sum=0;
-        for (int i=0;i<number.length();i++)
-        {
-            sum=sum+Integer.parseInt(number.substring(i,i+1));
+    public void test2() {
+        String number = "123";
+        int sum = 0;
+        for (int i = 0; i < number.length(); i++) {
+            sum = sum + Integer.parseInt(number.substring(i, i + 1));
         }
         System.out.println(sum);
 
         double r;
-        r=new Scanner(System.in).nextDouble();
+        r = new Scanner(System.in).nextDouble();
 
-        double S=(Math.PI)*r*r;
+        double S = (Math.PI) * r * r;
         System.out.println(S);
+    }
+
+    @Test
+    public void test3() {
     }
 }
