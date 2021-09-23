@@ -8,9 +8,10 @@ package dataStructure;
  */
 public class JosephProblem {
     public static void main(String[] args) {
-        LinkedBoy list1=new LinkedBoy();
+        LinkedBoy list1 = new LinkedBoy();
         list1.addNum(10);
         list1.showBoyList();
+        list1.countBoy(1,2,10);
     }
 
 }
@@ -39,27 +40,69 @@ class LinkedBoy {
             }
         }
     }
+
     //遍历环形链表
-    public void showBoyList()
-    {
-        if (first==null)
-        {
+    public void showBoyList() {
+        if (first == null) {
             System.out.println("链表没有元素");
             return;
-        }else
-        {
-            boy curBoy=first;
-            while (true)
-            {
-                System.out.println("序号为:"+curBoy.getNo());
-                if (curBoy.getNext()==first)
-                {
+        } else {
+            boy curBoy = first;
+            while (true) {
+                System.out.println("序号为:" + curBoy.getNo());
+                if (curBoy.getNext() == first) {
                     break;
-                }else
-                {
-                    curBoy=curBoy.getNext();
+                } else {
+                    curBoy = curBoy.getNext();
                 }
             }
+        }
+    }
+    //元素按照规则出队列
+
+    /**
+     * @return void
+     * @Author renhai
+     * @Description
+     * @Date 17:49 2021/9/23
+     * @Param [startNo, countNum, nums]
+     **/
+    public void countBoy(int startNo, int countNum, int nums) {
+        //先对数据进行校验
+        if (first == null || startNo < 1 || startNo > nums) {
+            System.out.println("参数输入错误,请重新输入");
+            return;
+        } else {
+            //辅助指针
+            boy helper = first;
+            //需要创建一个辅助指针helper 事先应该指向环形链表的最后这个节点
+            while (true) {
+                if (helper.getNext() == first) {
+                    break;
+                }
+                helper = helper.getNext();
+            }
+            //让first 和 helper位移到正确的位置 移动k-1次
+            for (int j = 0; j < startNo - 1; j++) {
+                first = first.getNext();
+                helper = helper.getNext();
+            }
+            //当小孩报数时，让first 和 helper 指针同时 的移动  m  - 1 次, 然后出圈
+            //这里是一个循环操作，知道圈中只有一个节点
+            while (true) {
+                if (helper == first) {
+                    break;
+                } else {
+                    for (int j = 0; j < countNum - 1; j++) {
+                        first = first.getNext();
+                        helper = helper.getNext();
+                    }
+                    System.out.printf("小孩%d出圈\n", first.getNo());
+                    first = first.getNext();
+                    helper.setNext(first);
+                }
+            }
+            System.out.printf("最后留在圈中的小孩编号%d \n", first.getNo());
         }
     }
 }
