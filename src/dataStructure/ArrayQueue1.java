@@ -2,7 +2,7 @@ package dataStructure;
 
 /**
  * @className:ArrayQueue
- * @description: 对接讲解
+ * @description: 队列讲解
  * @author: renhai
  * @create: 2021-09-16 18:07
  */
